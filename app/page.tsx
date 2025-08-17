@@ -12,6 +12,7 @@ import { Filter, Loader2 } from 'lucide-react';
 import Footer from "../components/footer";
 import AboutModal from '@/components/aboutModal';
 import ContactModal from '@/components/contactModal';
+import { Filters } from '@/components/FilterSidebar';
 
 export default function Home() {
   const [products, setProducts] = useState([]);

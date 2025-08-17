@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { Filter, X } from "lucide-react";
 
 // Define the shape of the filter state
-interface Filters {
+export interface Filters {
   minPrice: string;
   maxPrice: string;
   brands: string[];
