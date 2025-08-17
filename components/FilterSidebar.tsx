@@ -28,14 +28,19 @@ export default function FilterSidebar({
   onFilterChange,
   isOpen,
   onClose,
-}: FilterSidebarProps) {
-  const [filters, setFilters] = useState < Filters > ({
-    minPrice: "",
-    maxPrice: "",
-    brands: [],
-    categories: [],
-    tags: [],
-  });
+}: {
+  onFilterChange: (filters: Filters) => void;
+  isOpen: boolean;
+  onClose?: () => void;
+}) {
+const [filters, setFilters] = useState<Filters>({
+  minPrice: '',
+  maxPrice: '',
+  brands: [],
+  categories: [],
+  tags: [],
+});
+
 
   const categories = ["phones", "laptops", "accessories"];
   const tags = ["new", "hot deal", "used"];

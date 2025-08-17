@@ -19,7 +19,13 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
-  const [appliedFilters, setAppliedFilters] = useState({});
+const [appliedFilters, setAppliedFilters] = useState<Filters>({
+  minPrice: '',
+  maxPrice: '',
+  brands: [],
+  categories: [],
+  tags: [],
+});
   const router = useRouter();
     const [aboutOpen, setAboutOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
