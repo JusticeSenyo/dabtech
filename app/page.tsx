@@ -15,7 +15,8 @@ import ContactModal from '@/components/contactModal';
 import { Filters } from '@/components/FilterSidebar';
 import { Product } from '../components/FilterSidebar';
 export default function Home() {
-  const [products, setProducts] = useState([]);
+const [products, setProducts] = useState<Product[]>([]);
+
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -58,7 +59,8 @@ const [appliedFilters, setAppliedFilters] = useState<Filters>({
 
       const response = await fetch(`/api/products?${params.toString()}`);
       if (response.ok) {
-        let data = await response.json();
+        let data: Product[] = await response.json();
+
 
         if (appliedFilters.tags?.length > 0) {
           data = data.filter((product: Product) =>
@@ -75,18 +77,19 @@ const [appliedFilters, setAppliedFilters] = useState<Filters>({
     }
   };
 
-  const handleSearch = (term) => {
+  const handleSearch = (term: string) => {
     setSearchTerm(term);
     setTimeout(() => {
       fetchProducts();
     }, 300);
   };
 
-  const handleFilterChange = (filters) => {
+  const handleFilterChange = (filters: Filters) => {
     setAppliedFilters(filters);
   };
 
-  const featuredProducts = products.filter(product => product.featured);
+const featuredProducts = products.filter((product: Product) => product.featured);
+
 
   return (
     <>
@@ -206,9 +209,10 @@ const [appliedFilters, setAppliedFilters] = useState<Filters>({
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {products.map((product) => (
-                    <ProductCard key={product._id} product={product} />
-                  ))}
+                  {products.map((product: Product) => (
+  <ProductCard key={product._id} product={product} />
+))}
+
                 </div>
               )}
             </div>
