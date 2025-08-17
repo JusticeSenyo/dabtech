@@ -24,6 +24,16 @@ interface FilterSidebarProps {
   onClose?: () => void;
 }
 
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  brand: string;
+  category: string;
+  tags?: string[];
+}
+
+
 export default function FilterSidebar({
   onFilterChange,
   isOpen,

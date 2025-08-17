@@ -13,7 +13,7 @@ import Footer from "../components/footer";
 import AboutModal from '@/components/aboutModal';
 import ContactModal from '@/components/contactModal';
 import { Filters } from '@/components/FilterSidebar';
-
+import { Product } from '../components/FilterSidebar';
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -61,9 +61,9 @@ const [appliedFilters, setAppliedFilters] = useState<Filters>({
         let data = await response.json();
 
         if (appliedFilters.tags?.length > 0) {
-          data = data.filter(product => 
-            product.tags?.some(tag => appliedFilters.tags.includes(tag))
-          );
+          data = data.filter((product: Product) =>
+  product.tags?.some(tag => appliedFilters.tags.includes(tag))
+);
         }
 
         setProducts(data);
