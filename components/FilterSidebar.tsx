@@ -31,6 +31,7 @@ export interface Product {
   brand: string;
   category: string;
   tags?: string[];
+  featured?: boolean;
 }
 
 
