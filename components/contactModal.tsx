@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { FormEvent } from "react"
 import "./Modal.css"
 
 interface ContactModalProps {
@@ -10,12 +10,25 @@ interface ContactModalProps {
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
+  // optional: handle form submission properly
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    // you can add logic here (send email, API call, etc.)
+    console.log("Form submitted ✅")
+  }
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>
+        <button
+          type="button"
+          className="close-btn"
+          onClick={onClose}
+          aria-label="Close"
+        >
           &times;
         </button>
+
         <h2 className="modal-title">Contact Us</h2>
 
         <div className="contact-details">
@@ -24,7 +37,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           <p><strong>Email:</strong> support@dabtechnologies.com</p>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input type="text" id="name" placeholder="Your Name" required />
@@ -37,7 +50,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
           <div className="form-group">
             <label htmlFor="message">Message</label>
-            <textarea id="message" rows={4} placeholder="Your Message" required></textarea>
+            <textarea id="message" rows={4} placeholder="Your Message" required />
           </div>
 
           <button type="submit" className="submit-btn">Send Message</button>
