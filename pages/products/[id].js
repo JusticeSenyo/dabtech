@@ -53,7 +53,7 @@
       handleInterest();
 
       // Get number from env or fallback to default
-      const whatsappNumber = process.env.DEFAULT_WHATSAPP_NUMBER || "0550747566";
+      const whatsappNumber = process.env.DEFAULT_WHATSAPP_NUMBER || "233550747566";
 
       const message = encodeURIComponent(
         `Hi, I'm interested in ${product.name} - GH₵${product.price}`
