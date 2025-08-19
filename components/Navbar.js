@@ -51,23 +51,13 @@ export default function Navbar({ onSearch, searchTerm = '', onOpenAbout, onOpenC
               Contact
             </button>
 
-        {/* Categories Dropdown */}
-        <div className="relative group">
-          <button className="text-gray-600 hover:text-[#0E949A] transition-colors duration-200">
-            Categories
-          </button>
-          <div className="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-50">
-            {categories.map((category) => (
-              <Link
-                key={category.value}
-                href={category.value === "all" ? "/" : `/?category=${category.value}`}
-                className="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-[#0E949A]"
+          <Link href="/admin/login">
+              <button
+                className="text-gray-600 hover:text-[#0E949A] transition-colors duration-200"
               >
-                {category.name}
-              </Link>
-            ))}
-          </div>
-        </div>
+                Admin
+              </button>
+            </Link>
       </div>
 
       {/* Search Bar */}
@@ -149,27 +139,24 @@ export default function Navbar({ onSearch, searchTerm = '', onOpenAbout, onOpenC
               >
                 Contact
               </button>
+              <button
+                onClick={() => {
+                  onOpenContact();
+                  setIsMenuOpen(false);
+                }}
+                className="block py-2 text-gray-600 hover:text-[#0E949A]"
+              >
+                Contact
+              </button>
+              <Link href="/admin/login">
+              <button
+                
+                className="block py-2 text-gray-600 hover:text-[#0E949A]"
+              >
+                Admin
+              </button>
+              </Link>
 
-          {/* Categories Dropdown for Mobile */}
-          <details className="block">
-            <summary className="py-2 cursor-pointer text-gray-600 hover:text-[#0E949A]">
-              Categories
-            </summary>
-            <div className="ml-4">
-              {categories.map((category) => (
-                <Link
-                  key={category.value}
-                  href={
-                    category.value === "all" ? "/" : `/?category=${category.value}`
-                  }
-                  className="block py-2 text-gray-600 hover:text-[#0E949A] transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {category.name}
-                </Link>
-              ))}
-            </div>
-          </details>
         </div>
       </div>
     )}

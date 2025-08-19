@@ -32,8 +32,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <h2 className="modal-title">Contact Us</h2>
 
         <div className="contact-details">
-          <p><strong>Address:</strong> 123 Tech Avenue, Accra, Ghana</p>
-          <p><strong>Phone:</strong> +233 50 123 4567</p>
+          <p><strong>Address:</strong> Legon, Accra, Ghana</p>
+          <p><strong>Phone:</strong> +233 (551) 015-625</p>
           <p><strong>Email:</strong> support@dabtechnologies.com</p>
         </div>
 

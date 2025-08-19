@@ -53,7 +53,7 @@ const [filters, setFilters] = useState<Filters>({
 });
 
 
-  const categories = ["phones", "laptops", "accessories"];
+  const categories = ["phones", "laptops","cars", "accessories"];
   const tags = ["new", "hot deal", "used"];
 
   const handleFilterChange = (

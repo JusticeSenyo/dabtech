@@ -222,7 +222,11 @@ const featuredProducts = products.filter((product: Product) => product.featured)
        {/* Modals */}
       <AboutModal isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
-      <Footer/>
+      <Footer
+      
+      onOpenAbout={() => setAboutOpen(true)}
+      onOpenContact={() => setContactOpen(true)}
+      />
     </>
   );
 }

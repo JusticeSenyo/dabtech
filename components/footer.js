@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Link from 'next/link';
 import {
   Facebook,
@@ -12,7 +14,7 @@ import {
 } from 'lucide-react';
 import './footer.css';
 
-export default function Footer() {
+export default function Footer({onOpenAbout, onOpenContact}) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -56,24 +58,32 @@ export default function Footer() {
               <h4 className="footer-title">Quick Links</h4>
               <nav className="footer-nav">
                 <Link href="/" className="footer-link">Home</Link>
-                <Link href="/?category=phones" className="footer-link">Phones</Link>
-                <Link href="/?category=laptops" className="footer-link">Laptops</Link>
-                <Link href="/?category=cars" className="footer-link">Cars</Link>
-                <Link href="/?category=accessories" className="footer-link">Accessories</Link>
-                <Link href="/about" className="footer-link">About Us</Link>
+
+                
+                
+                <h3 className="footer-link" onClick={() => {
+                  onOpenAbout();
+                  setIsMenuOpen(false);
+                }}>About Us</h3>
               </nav>
             </div>
 
             {/* Support */}
             <div className="footer-section">
-              <h4 className="footer-title">Support</h4>
+              <h4 className="footer-title" >Support</h4>
               <nav className="footer-nav">
-                <Link href="/help" className="footer-link">Help Center</Link>
-                <Link href="/contact" className="footer-link">Contact Us</Link>
-                <Link href="/faq" className="footer-link">FAQ</Link>
-                <Link href="/shipping" className="footer-link">Shipping Info</Link>
-                <Link href="/returns" className="footer-link">Returns</Link>
-                <Link href="/safety" className="footer-link">Safety Tips</Link>
+                <h4 onClick={() => {
+                  onOpenContact();
+                  setIsMenuOpen(false);
+                }} className="footer-link">Help Center</h4>
+                {/* <Link href="/contact" className="footer-link">Contact Us</Link> */}
+                <h3 onClick={() => {
+                  onOpenContact();
+                  setIsMenuOpen(false);
+                }} className="footer-link">FAQ</h3>
+                {/* <Link href="/shipping" className="footer-link">Shipping Info</Link> */}
+                {/* <Link href="/returns" className="footer-link">Returns</Link> */}
+                {/* <Link href="/safety" className="footer-link">Safety Tips</Link> */}
               </nav>
             </div>
 
@@ -95,7 +105,7 @@ export default function Footer() {
                   <div>
                     <p className="contact-label">Phone</p>
                     <a href="tel:+1234567890" className="contact-value">
-                      +1 (234) 567-890
+                      +233 (551) 015-625
                     </a>
                   </div>
                 </div>
@@ -104,7 +114,7 @@ export default function Footer() {
                   <div>
                     <p className="contact-label">Address</p>
                     <p className="contact-value">
-                      123 Market Street<br />
+                      Legon<br />
                       Accra, Ghana
                     </p>
                   </div>
