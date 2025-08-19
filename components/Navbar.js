@@ -139,15 +139,7 @@ export default function Navbar({ onSearch, searchTerm = '', onOpenAbout, onOpenC
               >
                 Contact
               </button>
-              <button
-                onClick={() => {
-                  onOpenContact();
-                  setIsMenuOpen(false);
-                }}
-                className="block py-2 text-gray-600 hover:text-[#0E949A]"
-              >
-                Contact
-              </button>
+
               <Link href="/admin/login">
               <button
                 
