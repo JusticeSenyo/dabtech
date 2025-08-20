@@ -44,12 +44,12 @@ export default function Footer({onOpenAbout, onOpenContact}) {
                 <a href="#" className="social-link" aria-label="Twitter">
                   <Twitter className="social-icon" />
                 </a>
-                <a href="#" className="social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/dabtechnologies?igsh=MWc2NHRjcGt0eGtxdg%3D%3D&utm_source=qr" className="social-link" aria-label="Instagram">
                   <Instagram className="social-icon" />
                 </a>
-                <a href="#" className="social-link" aria-label="LinkedIn">
+                {/* <a href="#" className="social-link" aria-label="LinkedIn">
                   <Linkedin className="social-icon" />
-                </a>
+                </a> */}
               </div>
             </div>
 
