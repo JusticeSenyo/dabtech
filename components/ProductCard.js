@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
     handleInterest();
 
     // Get number from env or fallback to default
-    const whatsappNumber = process.env.DEFAULT_WHATSAPP_NUMBER || "233550747566";
+    const whatsappNumber = process.env.DEFAULT_WHATSAPP_NUMBER || "+233551015625";
 
     const message = encodeURIComponent(
       `Hi, I'm interested in ${product.name} - GH₵${product.price}`
@@ -26,14 +26,14 @@ export default function ProductCard({ product }) {
 
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
-
+  
   return (
     <Card className="group overflow-hidden transition-all duration-300 bg-white/10 border border-white/20 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl">
       <div className="relative overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-300 bg-white"
         />
         <div className="absolute top-2 left-2 flex flex-wrap gap-1">
           {product.tags?.map((tag) => (

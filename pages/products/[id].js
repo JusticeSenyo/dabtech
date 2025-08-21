@@ -7,7 +7,7 @@
   import { Badge } from '@/components/ui/badge';
   import { Separator } from '@/components/ui/separator';
   import { ArrowLeft, MessageCircle, Heart, Share2, Loader2 } from 'lucide-react';
-  import Navbar from '../../components/Navbar';
+  // import Navbar from '../../components/Navbar';
   import './[id].css';
 
   export default function ProductDetail() {
@@ -53,7 +53,7 @@
       handleInterest();
 
       // Get number from env or fallback to default
-      const whatsappNumber = process.env.DEFAULT_WHATSAPP_NUMBER || "233550747566";
+      const whatsappNumber = process.env.DEFAULT_WHATSAPP_NUMBER || "233551015625";
 
       const message = encodeURIComponent(
         `Hi, I'm interested in ${product.name} - GH₵${product.price}`
@@ -78,7 +78,7 @@
     if (loading) {
       return (
         <>
-          <Navbar />
+          {/* <Navbar /> */}
           <div className="loading-container">
             <div className="loading-content">
               <Loader2 className="w-6 h-6 animate-spin text-blue-600" />
@@ -119,16 +119,13 @@
           <meta property="og:image" content={product.image} />
           <meta property="og:type" content="product" />
         </Head>
-          <button>
 
-              <Link href="/" className="breadcrumb-link">back to Home</Link>
-          </button>
         {/* <Navbar /> */}
 
         <main className="min-h-screen bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 mb-6 text-sm text-gray-600">
+            <div className="flex items-center gap-2 mb-6 text-lg text-gray-600">
               <Link href="/" className="breadcrumb-link">Home</Link>
               <span>/</span>
               <Link href={`/?category=${product.category}`} className="breadcrumb-link capitalize">

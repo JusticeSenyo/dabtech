@@ -96,7 +96,7 @@ export default function Footer({onOpenAbout, onOpenContact}) {
                   <div>
                     <p className="contact-label">Email</p>
                     <a href="mailto:support@ecostore.com" className="contact-value">
-                      support@DABtechnologies.com
+                      bawsinekud80@gmail.com
                     </a>
                   </div>
                 </div>
